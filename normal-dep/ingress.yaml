@@ -16,12 +16,12 @@ spec:
           service:
             name: voting-service
             port:
-              number: 8080
+              number: 80
 
       - pathType: Prefix
         path: "/results"
         backend:
           service:
-            name: offer
+            name: result-service
             port:
-              number: 1001
+              number: 80
