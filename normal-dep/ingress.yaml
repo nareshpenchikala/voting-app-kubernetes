@@ -14,7 +14,7 @@ spec:
         path: "/vote"
         backend:
           service:
-            name: ui
+            name: voting-service
             port:
               number: 8080
 
