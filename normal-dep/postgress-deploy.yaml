@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:12
+          image: postgres:latest
           ports:
             - containerPort: 5432
           env:
