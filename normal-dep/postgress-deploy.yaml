@@ -58,3 +58,33 @@ spec:
         name: postgres
         ports:
         - containerPort: 5432
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: demo-voting-app
+    name: postgress-deploy
+  name: postgres-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-voting-app
+      name: postgress-pod
+  template:
+    metadata:
+      labels:
+        app: demo-voting-app
+        name: postgress-pod
+      name: postgres-pod
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        image: postgres:12
+        name: postgres
+        ports:
+        - containerPort: 5432
