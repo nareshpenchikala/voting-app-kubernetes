@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "testingclusteraks-82f2"
+    labels:
+        app: "testingclusteraks-82f2"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: testing-cluster-aks9133-testingclusteraks-82f2.2620ea9c37e24247a695.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "testingclusteraks-82f2"
+                servicePort: 8080
