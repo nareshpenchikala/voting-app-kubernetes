@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testingclusteraks-82f2"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testingclusteraks-82f2"
+  template:
+    metadata:
+      labels:
+        app: "testingclusteraks-82f2"
+    spec:
+      containers:
+        - name: "testingclusteraks-82f2"
+          image: "containerprojecttest.azurecr.io/testingclusteraks"
+          ports:
+          - containerPort: 8080
